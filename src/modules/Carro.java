@@ -1,5 +1,8 @@
 package modules;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Carro {
     private String modelo;
 
@@ -9,6 +12,8 @@ public class Carro {
     private  String tipo;
 
     private boolean locado;
+
+    private List<Motorista> motoristas = new ArrayList<>();
 
 
     public Carro(String modelo, String placa, String cor, boolean locado) {
@@ -57,6 +62,15 @@ public class Carro {
                 ", placa='" + placa + '\'' +
                 ", cor='" + cor + '\'' +
                 ", locado=" + locado +
+                ", motorista=" + motoristas +
                 '}';
+    }
+
+    public List<Motorista> getMotoristas() {
+        return motoristas;
+    }
+
+    public void setMotoristas(List<Motorista> motoristas) {
+        this.motoristas = motoristas;
     }
 }
