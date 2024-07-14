@@ -13,8 +13,6 @@ public class Carro {
 
     private boolean locado;
 
-    private List<Motorista> motoristas = new ArrayList<>();
-
 
     public Carro(String modelo, String placa, String cor, boolean locado) {
         this.modelo = modelo;
@@ -61,16 +59,7 @@ public class Carro {
                 "modelo='" + modelo + '\'' +
                 ", placa='" + placa + '\'' +
                 ", cor='" + cor + '\'' +
-                ", locado=" + locado +
-                ", motorista=" + motoristas +
-                '}';
+                ", locado=" + locado;
     }
 
-    public List<Motorista> getMotoristas() {
-        return motoristas;
-    }
-
-    public void setMotoristas(List<Motorista> motoristas) {
-        this.motoristas = motoristas;
-    }
 }
