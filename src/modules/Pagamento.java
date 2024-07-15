@@ -1,3 +1,5 @@
+package modules;
+
 public class Pagamento {
     private boolean metodo;
     private Integer calcao;
@@ -16,7 +18,4 @@ public class Pagamento {
         this.metodo = Metodo;
     }
 
-//     public function calculaValor(){
-
-//     }
 }

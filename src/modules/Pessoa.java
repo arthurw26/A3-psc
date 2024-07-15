@@ -1,7 +1,5 @@
 package modules;
 
-import java.util.ArrayList;
-
 public abstract class Pessoa {
     private String nome;
     private String telefone;
@@ -29,9 +27,10 @@ public abstract class Pessoa {
 
     @Override
     public String toString() {
-        return "Pessoa{" +
+        return "Pessoa[" +
                 "nome='" + nome + '\'' +
                 ", telefone='" + telefone + '\'' +
-                '}';
+                ']';
     }
+
 }

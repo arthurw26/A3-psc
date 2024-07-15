@@ -1,5 +1,7 @@
-import modules.Carro;
+import modules.Interface;
 import modules.Locar;
+import modules.Pessoa;
+
 import java.util.Scanner;
 
 public class Main {
@@ -18,7 +20,8 @@ public class Main {
                     "\n4-Cadastrar Agencia" +
                     "\n5-Alugar" +
                     "\n6-Pagar" +
-                    "\n7-Sair");
+                    "\n7- Ver Locações" +
+                    "\n8- Sair");
             System.out.println();
 
             select = ler.nextInt();
@@ -54,15 +57,18 @@ public class Main {
                     break;
 
                 case 6:
-                    System.out.println("Em Construção...");
+                    loc.pagar();
 
                     break;
 
                 case 7:
+                    loc.listarLocacoes();
+
+                    break;
+                case 8:
                     System.out.println("Obrigado por usar o nosso APP!");
                     System.out.println("Encerrando... ");
                     flag = false;
-
                     break;
 
                 default:
@@ -71,44 +77,6 @@ public class Main {
                     break;
 
             }
-        }
-        Scanner scanner = new Scanner(System.in);
-        int preco = 0, calcao = 0;
-
-        System.out.println("quanto foi o preço total?");
-        preco = scanner.nextInt();
-        System.out.println("qual foi o calcao da compra?");
-        calcao = scanner.nextInt();
-        System.out.printf(
-                "|qual a forma de pagamento?|\n" +
-                "| 1 - cartão               |\n" +
-                "| 2 - pix                  |\n");
-        int x = scanner.nextInt();
-        if(x == 1){
-            // cartao
-            Cartao cartao = new Cartao();
-            cartao.setCalcao(calcao);
-
-            System.out.println("quantas parcelas?");
-            int i = scanner.nextInt();
-            cartao.setNumeroParcelas(i);
-
-            System.out.println("total do preco das " + cartao.getNumeroParcelas() + " parcelas(diminuindo o calcao) = " + cartao.calcParcelas(preco));
-        }else if(x == 2){
-            // pix
-            Pix pix = new Pix();
-            pix.setCalcao(calcao);
-
-            System.out.println("quantos % de desconto?");
-            pix.setDesconto(scanner.nextInt());
-            scanner.nextLine();
-
-            System.out.println("qual a chave do pix?");
-            pix.setChave(scanner.nextLine());
-
-            System.out.println("total do preco a pagar no pix = " +  pix.calcDesconto(preco) + "\nNa chave = " + pix.getChave());
-        }else{
-            // finalizar programa ou rodar de novo dando erro
         }
     }
 }

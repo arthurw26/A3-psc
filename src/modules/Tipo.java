@@ -11,7 +11,13 @@ public class Tipo extends Carro{
         ValorSeguro = valorSeguro;
     }
 
+    public int getPreço() {
+        return preço;
+    }
 
+    public int getValorSeguro() {
+        return ValorSeguro;
+    }
 
     @Override
     public String toString() {

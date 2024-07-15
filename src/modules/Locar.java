@@ -14,12 +14,15 @@ public class Locar implements Interface {
         System.out.print("\nID do Carro: ");
         int idCarro = ler.nextInt();
         listarMotoristas();
-        System.out.print("\nID do Motorista");
+        System.out.print("\nID do Motorista: ");
         int idMotorista = ler.nextInt();
         listarAgencias();
-        System.out.print("\nID da Agencia:");
+        System.out.print("\nID da Agencia: ");
         int idAgencia = ler.nextInt();
-        locacoes.add(new Aluga(carros.get(idCarro), clientes.get(idCliente), motoristas.get(idMotorista), agencias.get(idAgencia)));
+        System.out.println("Quantos dias você ficara com o carro? ");
+        int dias = ler.nextInt();
+        locacoes.add(new Aluga(carros.get(idCarro), clientes.get(idCliente), motoristas.get(idMotorista), agencias.get(idAgencia), dias));
+        carros.get(idCarro).carroLocado();
     }
 
 
@@ -43,10 +46,53 @@ public class Locar implements Interface {
         System.out.print("\n");
     }
 
+    public void pagar(){
+        int calcao = 0;
+
+        listarLocacoes();
+        System.out.println("\nId do carro?");
+        int escolha = ler.nextInt();
+        int valor = locacoes.get(escolha).getCarro();
+        System.out.println();
+        int dias = locacoes.get(escolha).getDias();
+        System.out.println("qual foi o calcao da compra?");
+        calcao = ler.nextInt();
+        System.out.printf(
+                "|qual a forma de pagamento?|\n" +
+                        "| 1 - cartão               |\n" +
+                        "| 2 - pix                  |\n");
+        int x = ler.nextInt();
+        int valorTotal = valor * dias;
+        if(x == 1){
+            // cartao
+            cartao.setCalcao(calcao);
+
+            System.out.println("quantas parcelas?");
+            int i = ler.nextInt();
+            cartao.setNumeroParcelas(i);
+            locacoes.get(escolha).pagou();
+
+            System.out.println("total do preco das " + cartao.getNumeroParcelas() + " parcelas(diminuindo o calcao) = " + cartao.calcParcelas(valorTotal));
+        }else if(x == 2){
+            // pix
+            pix.setCalcao(calcao);
+
+            System.out.println("quantos % de desconto?");
+            pix.setDesconto(ler.nextInt());
+            ler.nextLine();
+
+            System.out.println("qual a chave do pix?");
+            pix.setChave(ler.nextLine());
+
+            System.out.println("total do preco a pagar no pix = " +  pix.calcDesconto(valorTotal) + "\nNa chave = " + pix.getChave());
+            locacoes.get(escolha).pagou();
+        }
+    }
+
     public void listarAgencias(){
         System.out.print("\n--Lista de Agencias--");
-        for (int i=0; i < locacoes.size(); i++) {
-            System.out.print("\nID: " + i + " - Agencia: " + locacoes.get(i).toString());
+        for (int i=0; i < agencias.size(); i++) {
+            System.out.print("\nID: " + i + " - Agencia: " + agencias.get(i).toString());
 
         }
 

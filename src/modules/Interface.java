@@ -8,4 +8,7 @@ public interface Interface {
     ArrayList<Tipo> carros = new ArrayList<>();
     ArrayList<Agencia> agencias = new ArrayList<>();
     ArrayList<Aluga> locacoes = new ArrayList<>();
+    Cartao cartao = new Cartao();
+    Pix pix = new Pix();
+
 }

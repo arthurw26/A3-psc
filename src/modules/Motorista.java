@@ -11,4 +11,6 @@ public class Motorista extends Pessoa{
     public String getCnh() {
         return cnh;
     }
+
+
 }
