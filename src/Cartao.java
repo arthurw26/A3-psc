@@ -2,7 +2,7 @@ public class Cartao extends Pagamento{
     double parcela;
     Integer numeroParcelas;
 
-    public double getParcela()`{
+    public double getParcela(){
         return parcela;
     }
     public Integer getNumeroParcelas(){
@@ -16,7 +16,8 @@ public class Cartao extends Pagamento{
         this.numeroParcelas = NumeroParcelas;
     }
 
-//     public function formaPagamento(){
-
-//     }
+     public Integer calcParcelas(Integer preco){
+         int Parcela = ((preco - this.getCalcao()) / (this.getNumeroParcelas()));
+         return Parcela;
+     }
 }

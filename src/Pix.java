@@ -15,4 +15,10 @@ public class Pix extends Pagamento {
     public void setDesconto(Integer Desconto){
         this.desconto = Desconto;
     }
+
+    public Integer calcDesconto(Integer preco){
+        int desconto = (preco - (preco * this.getDesconto() / 100)) - this.getCalcao();
+
+        return desconto;
+    }
 }
