@@ -5,18 +5,6 @@ import java.util.ArrayList;
 public abstract class Pessoa {
     private String nome;
     private String telefone;
-//    private ArrayList<String> locacao;
-
-
-
-//    public void addAlocacao(){
-//        locacao.add()
-//    }
-
-//    public void removerAlocacao(){
-//
-//    }
-
 
     public String getNome() {
         return nome;

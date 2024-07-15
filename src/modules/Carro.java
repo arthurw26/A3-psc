@@ -9,7 +9,7 @@ public class Carro {
     private String placa;
 
     private String cor;
-    private  String tipo;
+    private Tipo tipo;
 
     private boolean locado;
 

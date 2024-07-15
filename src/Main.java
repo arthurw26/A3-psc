@@ -1,9 +1,20 @@
 import modules.Carro;
+import modules.Locar;
 
 public class Main {
     public static void main(String[] args) {
-        Carro car1 = new Carro("sedan", "A12F375", "placa", false);
+        Locar loc = new Locar();
 
-        System.out.println(car1);
+        loc.addCarros();
+        loc.addCarros();
+
+        loc.cadastraCliente();
+
+        loc.cadastraMotorista();
+        loc.listarMotoristas();
+
+        loc.alugaCarro();
+        loc.listarLocacoes();
+
     }
 }

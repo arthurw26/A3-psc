@@ -1,13 +1,14 @@
 package modules;
 
-public class Motorista{
-    private int cnh;
-    private String nome;
+public class Motorista extends Pessoa{
+    private String cnh;
 
-    public Motorista(int cnh, String Nome) {
+    public Motorista(String nome, String telefone, String cnh) {
+        super(nome, telefone);
         this.cnh = cnh;
-        this.nome = Nome;
     }
 
-
+    public String getCnh() {
+        return cnh;
+    }
 }
