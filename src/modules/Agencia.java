@@ -24,4 +24,12 @@ public class Agencia {
     public void setLocal(String local) {
         this.local = local;
     }
+
+    @Override
+    public String toString() {
+        return "Agencia[" +
+                "nome='" + nome + '\'' +
+                ", local='" + local + '\'' +
+                ']';
+    }
 }

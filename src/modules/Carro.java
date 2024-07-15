@@ -1,24 +1,23 @@
 package modules;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Carro {
     private String modelo;
 
     private String placa;
 
     private String cor;
-    private Tipo tipo;
+
+    private String tipo;
 
     private boolean locado;
 
 
-    public Carro(String modelo, String placa, String cor, boolean locado) {
+    public Carro(String modelo, String placa, String cor, String tipo) {
         this.modelo = modelo;
         this.placa = placa;
         this.cor = cor;
-        this.locado = locado;
+        this.tipo = tipo;
+        this.locado = false;
     }
 
     public String getModelo() {
@@ -51,6 +50,19 @@ public class Carro {
 
     public void setLocado(boolean locado) {
         this.locado = locado;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
+    public void carroLocado(){
+        this.locado = true;
+        System.out.println("O Carro está locado, esperando o Pagamento... ");
     }
 
     @Override
